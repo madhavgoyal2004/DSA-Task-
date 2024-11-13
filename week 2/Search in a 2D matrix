@@ -1,0 +1,17 @@
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        // by using stair search
+        int row = 0, col = matrix[0].length -1;
+        while (true){  //1  0
+            if(matrix[row][col] == target)
+                return true;
+            else if (matrix[row][col]<target)
+                row++;
+            else 
+                col--;
+
+            if(row == matrix.length || col == -1)
+                return false;
+        }
+    }
+}
